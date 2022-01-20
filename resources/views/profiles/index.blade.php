@@ -11,7 +11,7 @@
               <div class="d-flex align-items-center pb-3">
                     <div class ="h4">{{$user-> username}}</div>
 
-                    <button class="btn btn-primary ml-4"> Follow</button>
+                  <follow-button user-id="{{$user->id}}" follows="{{$follows}}"></follow-button>
              </div>
                 <a href="/post/create">Add New Post</a>
             </div>
@@ -20,7 +20,7 @@
             @endcan
         <div class="d-flex">
             <div class= "pr-4"><strong>{{$user->posts->count()}}</strong> Posts</div>
-            <div class= "pr-4" ><strong>7000</strong> Followers</div>
+            <div class= "pr-4" ><strong>{{$user->profile->followers->count()}}</strong> Followers</div>
             <div class= "pr-4"><strong>455</strong> Following</div>
         </div>
         <div class="pt-3 font-weight-bold">{{$user->profile->title}}</div>
